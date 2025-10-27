@@ -1,94 +1,120 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Matematika faniga bag‘ishlangan o‘quv sayti. Funksiyalar, tenglamalar, geometrik masalalar va testlar.">
-  <title>Matematika — O‘rgan va rivojlan</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #004aad;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-    }
-    nav {
-      background: #033b8a;
-      text-align: center;
-      padding: 10px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      padding: 20px;
-      background: white;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 800px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    footer {
-      background: #004aad;
-      color: white;
-      text-align: center;
-      padding: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AzizbekMath - Matematika sayti</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            margin: 0;
+            background: #f4f7fa;
+            color: #222;
+        }
+        header {
+            background: #0052cc;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+        nav {
+            background: #003d99;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            display: block;
+        }
+        nav a:hover {
+            background: #004fbf;
+        }
+        main {
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0052cc;
+        }
+        footer {
+            background: #003d99;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+        .lesson {
+            background: #f0f6ff;
+            border-left: 5px solid #0052cc;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .lesson:hover {
+            background: #e6f0ff;
+        }
+        .btn {
+            background: #0052cc;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #003d99;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>Matematika dunyosiga xush kelibsiz!</h1>
-  <p>Formulalar, misollar va bilimlaringizni oshirish uchun foydali manba.</p>
-</header>
+    <header>
+        <h1>📘 AzizbekMath - Matematika olamiga xush kelibsiz!</h1>
+        <p>O‘rgan, hisobla va muvaffaqiyat sari qadam tashla!</p>
+    </header>
 
-<nav>
-  <a href="#home">Bosh sahifa</a>
-  <a href="#topics">Mavzular</a>
-  <a href="#contact">Bog‘lanish</a>
-</nav>
+    <nav>
+        <a href="#">Bosh sahifa</a>
+        <a href="#">Funksiyalar</a>
+        <a href="#">Trigonometriya</a>
+        <a href="#">Testlar</a>
+        <a href="#">Kontakt</a>
+    </nav>
 
-<section id="home">
-  <h2>Bosh sahifa</h2>
-  <p>Bu sayt matematika fanini osonroq va qiziqarliroq o‘rganish uchun yaratilgan. Siz bu yerda funksiyalar, tenglamalar, geometriya va boshqa ko‘plab mavzularni topasiz.</p>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Function_graph.svg/800px-Function_graph.svg.png" alt="Funksiya grafigi" style="width:100%;border-radius:10px;">
-</section>
+    <main>
+        <h2>🎓 Bugungi mavzu: Funksiyaning o‘sish va kamayish oraliqlari</h2>
+        <div class="lesson">
+            <p><strong>Funksiya</strong> — bu har bir argumentga yagona qiymat mos qo‘yuvchi qonuniyat.</p>
+            <p>Funksiyaning <em>o‘sish oralig‘i</em> — bu oraliqda x o‘sganda, f(x) ham o‘sadi.</p>
+            <p><em>Kamayish oralig‘i</em> — bu oraliqda x o‘sganda, f(x) kamayadi.</p>
+        </div>
 
-<section id="topics">
-  <h2>Asosiy mavzular</h2>
-  <ul>
-    <li>📈 Funksiya va uning grafigi</li>
-    <li>🧮 Algebraik tenglamalar</li>
-    <li>📐 Geometriya asoslari</li>
-    <li>🔢 Trigonometrik ifodalar</li>
-  </ul>
-  <p>Har bir mavzuga keyinchalik misollar va testlar qo‘shiladi.</p>
-</section>
+        <h2>🧮 Misol:</h2>
+        <div class="lesson">
+            <p>Berilgan: f(x) = x² - 4x + 3</p>
+            <p>Hosila topamiz: f′(x) = 2x - 4</p>
+            <p>f′(x) = 0 → x = 2</p>
+            <p>➡ f(x) <strong>kamayadi</strong> oraliqda (-∞; 2)</p>
+            <p>➡ f(x) <strong>o‘sadi</strong> oraliqda (2; +∞)</p>
+        </div>
 
-<section id="contact">
-  <h2>Bog‘lanish</h2>
-  <p>Agar sizda taklif yoki savol bo‘lsa, biz bilan bog‘laning:</p>
-  <p>📧 Email: <a href="mailto:matematika@gmail.com">matematika@gmail.com</a></p>
-</section>
+        <button class="btn" onclick="alert('Ajoyib! Siz darsni o‘rgandingiz 👏')">Tushundim ✅</button>
+    </main>
 
-<footer>
-  <p>&copy; 2025 Matematika o‘quv sayti | Barcha huquqlar himoyalangan.</p>
-</footer>
+    <footer>
+        <p>© 2025 AzizbekMath | Barcha huquqlar himoyalangan.</p>
+    </footer>
 
 </body>
 </html>
-
