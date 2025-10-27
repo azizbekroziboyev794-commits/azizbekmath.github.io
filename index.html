@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Azizbek Math & CS Academy</title>
+<meta name="description" content="Azizbek Math & CS Academy — Maktab va Universitet darajasidagi matematika va informatika o'quv platformasi" />
+<style>
+:root{
+  --bg1:#05060a; --bg2:#07102a;
+  --card: rgba(255,255,255,0.03);
+  --accent:#2f8cff; --accent2:#6cc1ff;
+  --muted:#99b0d6; --glass: rgba(255,255,255,0.02);
+  --radius:12px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Segoe UI,Roboto,Arial;color:#eaf6ff;
+background: radial-gradient(1000px 400px at 10% 10%, rgba(47,140,255,0.04), transparent),
+linear-gradient(180deg,var(--bg1),var(--bg2)); -webkit-font-smoothing:antialiased}
+header{display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#04203a}
+.brand .title{font-weight:800;font-size:18px}
+.brand .sub{color:var(--muted);font-size:13px}
+main{max-width:1180px;margin:28px auto;padding:16px}
+.hero{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start}
+.panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+.lead{color:var(--muted);margin-top:8px}
+.choice-buttons{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.btn{background:linear-gradient(180deg,var(--accent),#2876e6);color:#04203a;border:none;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700;box-shadow:0 8px 18px rgba(47,140,255,0.08)}
+.btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);box-shadow:none}
+.search{display:flex;gap:8px;margin-top:12px}
+input[type=search]{flex:1;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.content-area{display:grid;grid-template-columns:300px 1fr;gap:18px;margin-top:20px}
+.sidebar{position:sticky;top:20px;height:fit-content}
+.nav-card{padding:12px;border-radius:10px;background:var(--card);margin-bottom:12px}
+.nav-section{font-weight:800;color:var(--accent2);margin-bottom:8px}
+.nav-list{display:flex;flex-direction:column;gap:6px}
+.nav-item{padding:8px 10px;border-radius:8px;cursor:pointer;color:var(--muted);font-weight:700}
+.nav-item:hover{background:rgba(255,255,255,0.02);color:var(--accent2)}
+.nav-item.active{background:linear-gradient(90deg,rgba(47,140,255,0.06),rgba(108,193,255,0.02));color:var(--accent2)}
+.main-panel{padding:0}
+.topic-card{background:var(--glass);padding:14px;border-radius:10px;margin-bottom:12px;border-left:4px solid rgba(47,140,255,0.12)}
+.topic-header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.topic-title{font-size:18px;font-weight:800}
+.topic-desc{color:var(--muted);margin-top:6px}
+.subtopic{margin-top:10px;padding:12px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border:1px solid rgba(255,255,255,0.02)}
+.subtopic h4{margin:0;font-size:16px}
+.subtopic p{color:var(--muted);margin:6px 0 0 0;white-space:pre-line}
+.pdf-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#04203a;font-weight:700;text-decoration:none}
+.footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted);font-size:13px}
+.collapsible{cursor:pointer;padding:10px;border-radius:8px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02);margin-top:8px}
+.collapsible .chev{float:right;transform:rotate(0deg);transition:transform .25s}
+.collapsible.open .chev{transform:rotate(90deg)}
+.hidden{display:none}
+mark{background:#ffd54d;color:#041024;padding:0 4px;border-radius:3px}
+@media (max-width:940px){.hero{grid-template-columns:1fr}.content-area{grid-template-columns:1fr}.sidebar{position:static}}
+.code{background:#02102a;padding:8px;border-radius:8px;color:#bfe3ff;font-family:monospace;overflow:auto}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">AM</div>
+  <div class="brand">
+    <div class="title">Azizbek Math & CS Academy</div>
+    <div class="sub">Maktab va Universitet: Matematika va Informatika</div>
+  </div>
+</header>
+
+<main>
+<section id="startSection" class="hero">
+  <div class="panel">
+    <h1>Azizbek Math & CS Academy</h1>
+    <p class="lead">5‑sinfdan universitetgacha matematik va informatika darslari. Siz o‘quvchimisiz yoki talabamisiz?</p>
+    <div class="choice-buttons">
+      <button class="btn" onclick="enterSite('student')">O‘quvchiman</button>
+      <button class="btn" onclick="enterSite('university')">Talabaman</button>
+      <button class="btn secondary" onclick="enterSite('student','cs')">O‘quvchi (Informatika)</button>
+      <button class="btn secondary" onclick="enterSite('university','cs')">Talaba (Informatika)</button>
+    </div>
+
+    <div style="margin-top:14px">
+      <label style="color:var(--muted);font-weight:800">Qidiruv</label>
+      <div class="search">
+        <input id="globalSearch" type="search" placeholder="masalan: kvadrat tenglama, integral, algoritm..." />
+        <button class="btn secondary" onclick="doSearch()">Qidirish</button>
+      </div>
+      <p style="color:var(--muted);font-size:13px;margin-top:8px">O‘zingizga mos bo‘limni tanlang va bosib o‘rganing.</p>
+    </div>
+  </div>
+
+  <aside class="panel">
+    <h3 style="margin:0 0 8px 0">Tez kirish</h3>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <button class="btn secondary" onclick="enterSite('student');openTopic('Algebra')">Algebra - Maktab</button>
+      <button class="btn secondary" onclick="enterSite('university');openTopic('Matematik analiz')">Mat analiz - Talaba</button>
+      <button class="btn secondary" onclick="enterSite('student','cs');openTopic('Algoritmlar',true,'cs')">Algoritmlar - Informatika</button>
+    </div>
+    <div style="margin-top:14px;color:var(--muted);font-size:13px">
+      <strong>Muallif:</strong><br/>Azizbek Ro'ziboyev tomonidan yaratilgan o‘quv platforma
+    </div>
+  </aside>
+</section>
+
+<section id="app" class="content-area" style="display:none">
+  <nav class="sidebar">
+    <div class="nav-card">
+      <div class="nav-section">Maktab - Matematika</div>
+      <div class="nav-list" id="schoolNav"></div>
+    </div>
+    <div class="nav-card">
+      <div class="nav-section">Universitet - Matematika</div>
+      <div class="nav-list" id="uniNav"></div>
+    </div>
+    <div class="nav-card">
+      <div class="nav-section">Informatika</div>
+      <div class="nav-list" id="csNav"></div>
+    </div>
+    <div class="nav-card">
+      <div class="nav-section">Foydali</div>
+      <div class="nav-list">
+        <div class="nav-item" onclick="scrollToTop()">Bosh sahifa</div>
+        <div class="nav-item" onclick="showAbout()">Platforma haqida</div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-panel" id="mainPanel"></main>
+</section>
+
+<footer class="footer">
+  © 2025 Azizbek Math & CS Academy — Azizbek Ro'ziboyev tomonidan yaratilgan o‘quv platforma
+</footer>
+
+<!-- templates -->
+<template id="topicTemplate">
+  <article class="topic-card">
+    <div class="topic-header">
+      <div>
+        <div class="topic-title"></div>
+        <div class="topic-desc"></div>
+      </div>
+      <div><a class="pdf-btn hidden" target="_blank" rel="noopener">📄 PDF</a></div>
+    </div>
+    <div class="subtopics"></div>
+  </article>
+</template>
+
+<template id="subtopicTemplate">
+  <div class="subtopic">
+    <h4></h4>
+    <p></p>
+    <div class="extras" style="margin-top:8px"></div>
+  </div>
+</template>
+
+<script>
+/* ===== DATA: Matematika va Informatika mazmuni ===== */
+const DATA = {
+  school: {
+    "Algebra": {
+      desc:"Sonlar, tenglamalar, kvadrat tenglamalar, polinomlar va funksiyalar kirish.",
+      topics:[
+        {title:"Sonlar va ifodalar", text:"Natural, butun, ratsional va irratsional sonlar. Ifodalarni soddalashtirish, ko'paytirish va bo'lish."},
+        {title:"Kvadrat tenglama", text:"ax²+bx+c=0. Diskriminant D=b²-4ac. Ildizlar: x = (-b ± √D)/(2a).\nMisol: x²-5x+6=0 → x=2,3."},
+        {title:"Faktorlash", text:"Umumiy omil ajratish, a²-b²=(a-b)(a+b), kvadrat trinomlarni faktorlashtirish."}
+      ]
+    },
+    "Geometriya": {
+      desc:"To'rtburchak, uchburchak, doira, burchaklar va trigonometrik munosabatlar.",
+      topics:[
+        {title:"Uchburchak", text:"Ichki burchaklar yig'indisi 180°. Yuzi: S=1/2 * a * h."},
+        {title:"Doira", text:"Doira: uzunlik L=2πr, yuzi S=πr²."},
+        {title:"Ko'pburchaklar", text:"Ichki burchaklar yig'indisi = 180*(n-2) daraja."}
+      ]
+    },
+    "Trigonometriya": {
+      desc:"Asosiy trigonometrik funksiyalar va ularning qo'llanilishi maktab darajasida.",
+      topics:[
+        {title:"Asosiy formulalar", text:"sin²x+cos²x=1; tgx=sinx/cosx; ctgx=1/tgx."},
+        {title:"Sinus va kosinus qonuni", text:"a/sinA = b/sinB = c/sinC; c² = a² + b² - 2ab cosC."}
+      ]
+    },
+    "Ehtimollik": {
+      desc:"Boshlang'ich ehtimollik tushunchalari va statistik ko'rsatkichlar.",
+      topics:[
+        {title:"Asosiy tushunchalar", text:"Hodisa, namunaviy maydon, ehtimollik formulasi: P(A)=m/n."},
+        {title:"O'rtacha va median", text:"O'rtacha qiymat x̄ = sum(x)/n; Median - tartiblangan ro'yxat markazi."}
+      ]
+    }
+  },
+  university: {
+    "Matematik analiz": {
+      desc:"Chegaralar, hosila, integral, qatorlar va amaliy ishlanmalar.",
+      topics:[
+        {title:"Chegara va hosila", text:"f'(x)=lim_{h→0} [f(x+h)-f(x)]/h. Hosila funksiyaning o'sish tezligi."},
+        {title:"Integral", text:"∫x² dx = x³/3 + C. Substitutsiya va integrallarni hisoblash."},
+        {title:"Qatorlar", text:"Ta'rif: funksiya qatorlar orqali ifoda etilishi; konvergentlik tushunchasi."}
+      ]
+    },
+    "Chiziqli algebra": {
+      desc:"Matritsalar, determinantlar, sistemalar va vektorlar.",
+      topics:[
+        {title:"Matritsalar va determinant", text:"Matritsa, determinant, Gauss usuli, A x = b sistemalari."},
+        {title:"Vektorlar", text:"Vektorlar va ularning linear kombinatsiyasi, bazis va o'lcham."}
+      ]
+    },
+    "Ehtimollik va statistik tahlil": {
+      desc:"Taqsimotlar, matematik statistika va parametrik baholar.",
+      topics:[
+        {title:"Taqsimotlar", text:"Binom, normal taqsimotlar kirish."},
+        {title:"Deskriptiv statistika", text:"O'rtacha, dispersiya, standart og'ish."}
+      ]
+    }
+  },
+  cs: {
+    school: {
+      "Boshlang'ich algoritmlar": {
+        desc:"Mantiqiy fikrlash va oddiy algoritmlar (sikl, shart, o'zgaruvchilar).",
+        topics:[
+          {title:"Algoritm nima?", text:"Algoritm - ma'lum vazifani bajaruvchi qadamlar ketma-ketligi. Psevdo-kod orqali ifoda qilish."},
+          {title:"Sikl (for, while)", text:"Sikl yordamida takroriy amallar bajariladi. Misol: 1 dan n gacha sonlarni hisoblash."}
+        ]
+      },
+      "Ma'lumotlar tuzilmasi (kirish)": {
+        desc:"Massiv, ro'yxat va oddiy strukturaviy tushunchalar.",
+        topics:[
+          {title:"Massiv va ro'yxat", text:"Index orqali elementlarga murojaat; massiv elementlari ketma-ket saqlanadi."},
+          {title:"Stack va Queue (tushuncha)", text:"Stack - LIFO; Queue - FIFO."}
+        ]
+      }
+    },
+    university: {
+      "Algoritmlar va murakkablik": {
+        desc:"Asimptotik notatsiya, murakkablik, qidiruv va saralash algoritmlari.",
+        topics:[
+          {title:"Big-O notatsiya", text:"Murakkablikni baholash: O(n), O(n log n), O(n^2) va boshqalar."},
+          {title:"Saralash usullari", text:"Bubble sort, Merge sort (O(n log n)), Quick sort."}
+        ]
+      },
+      "Ma'lumotlar tuzilmalari": {
+        desc:"Chuqurroq strukturalar: daraxtlar, graf va hash-jadval.",
+        topics:[
+          {title:"Graf va algoritarlar", text:"Graf - tugunlar va qirralar; BFS va DFS qidiruvi."},
+          {title:"Daraxt", text:"Binary tree, inorder/preorder/postorder qidiruv, balanslash tushunchasi."}
+        ]
+      }
+    }
+  }
+};
+
+/* ===== HELPERS: build nav and content ===== */
+function enterSite(kind, csFlag){
+  document.getElementById('startSection').style.display='none';
+  document.getElementById('app').style.display='grid';
+  buildNav(kind, csFlag);
+  // open first available topic
+  if(csFlag){
+    openTopic('Boshlang\\'ich algoritmlar', true, 'cs', true);
+  } else if(kind==='student'){
+    openTopic(Object.keys(DATA.school)[0]);
+  } else {
+    openTopic(Object.keys(DATA.university)[0], true);
+  }
+  document.getElementById('globalSearch').focus();
+}
+
+function buildNav(kind, csFlag){
+  const schoolNav = document.getElementById('schoolNav');
+  const uniNav = document.getElementById('uniNav');
+  const csNav = document.getElementById('csNav');
+  schoolNav.innerHTML=''; uniNav.innerHTML=''; csNav.innerHTML='';
+  // school math
+  for(const key of Object.keys(DATA.school)){
+    const el=document.createElement('div'); el.className='nav-item'; el.textContent=key;
+    el.onclick = ()=> { openTopic(key); setActiveNav(el); };
+    schoolNav.appendChild(el);
+  }
+  // uni math
+  for(const key of Object.keys(DATA.university)){
+    const el=document.createElement('div'); el.className='nav-item'; el.textContent=key;
+    el.onclick = ()=> { openTopic(key, true); setActiveNav(el); };
+    uniNav.appendChild(el);
+  }
+  // cs combined: school and uni in one list
+  for(const sectionKey of Object.keys(DATA.cs.school)){
+    const el=document.createElement('div'); el.className='nav-item'; el.textContent=sectionKey;
+    el.onclick = ()=> { openTopic(sectionKey, true, 'cs', false, 'school'); setActiveNav(el); };
+    csNav.appendChild(el);
+  }
+  for(const sectionKey of Object.keys(DATA.cs.university)){
+    const el=document.createElement('div'); el.className='nav-item'; el.textContent=sectionKey;
+    el.onclick = ()=> { openTopic(sectionKey, true, 'cs', false, 'university'); setActiveNav(el); };
+    csNav.appendChild(el);
+  }
+}
+
+function setActiveNav(el){ document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active')); el.classList.add('active'); }
+
+function openTopic(name, isUni=false, area='math', csLevelFlag=false, csSource){
+  const main = document.getElementById('mainPanel');
+  main.innerHTML='';
+  let source=null;
+  if(area==='cs'){
+    // select source from cs depending on level
+    if(csSource==='school') source = DATA.cs.school[name];
+    else if(csSource==='university') source = DATA.cs.university[name];
+    else source = DATA.cs.school[name] || DATA.cs.university[name];
+  } else {
+    source = isUni ? DATA.university[name] : DATA.school[name] || DATA.university[name];
+  }
+  if(!source) return;
+  const tpl = document.getElementById('topicTemplate');
+  const node = tpl.content.cloneNode(true);
+  node.querySelector('.topic-title').textContent = name;
+  node.querySelector('.topic-desc').textContent = source.desc || '';
+  const subcontainer = node.querySelector('.subtopics');
+  let hasPdf=false;
+  for(const t of source.topics){
+    const st = document.getElementById('subtopicTemplate').content.cloneNode(true);
+    st.querySelector('h4').textContent = t.title;
+    st.querySelector('p').innerHTML = t.text || '';
+    const extras = st.querySelector('.extras');
+    // add code blocks or math display if included
+    if(t.code){
+      const pre = document.createElement('pre'); pre.className='code'; pre.textContent = t.code;
+      extras.appendChild(pre);
+    }
+    if(t.formula){
+      const formula = document.createElement('div'); formula.style.marginTop='8px'; formula.innerHTML = '<strong>Formula:</strong> '+t.formula;
+      extras.appendChild(formula);
+    }
+    if(t.extras){
+      for(const ex of t.extras){
+        if(ex.type==='image'){
+          const img=document.createElement('img'); img.src=ex.value; img.style.maxWidth='100%'; img.style.borderRadius='8px'; extras.appendChild(img);
+        } else if(ex.type==='example'){
+          const pre = document.createElement('div'); pre.style.marginTop='8px'; pre.style.background='rgba(255,255,255,0.02)'; pre.style.padding='8px'; pre.style.borderRadius='6px'; pre.textContent=ex.value; extras.appendChild(pre);
+        }
+      }
+    }
+    subcontainer.appendChild(st);
+  }
+  main.appendChild(node);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function openTopicByName(name){
+  if(DATA.school[name]){ enterSite('student'); setTimeout(()=> openTopic(name),200); return; }
+  if(DATA.university[name]){ enterSite('university'); setTimeout(()=> openTopic(name,true),200); return; }
+  // cs
+  if(DATA.cs.school[name]){ enterSite('student','cs'); setTimeout(()=> openTopic(name,false,'cs',false,'school'),200); return; }
+  if(DATA.cs.university[name]){ enterSite('university','cs'); setTimeout(()=> openTopic(name,false,'cs',false,'university'),200); return; }
+}
+
+function showAbout(){
+  const main=document.getElementById('mainPanel'); main.innerHTML='';
+  const tpl=document.getElementById('topicTemplate'); const node=tpl.content.cloneNode(true);
+  node.querySelector('.topic-title').textContent='Platforma haqida';
+  node.querySelector('.topic-desc').textContent='Azizbek Math & CS Academy — 5-sinfdan universitetgacha bo‘lgan matematika va informatika materiallari.';
+  const sub=node.querySelector('.subtopics');
+  const st=document.getElementById('subtopicTemplate').content.cloneNode(true);
+  st.querySelector('h4').textContent='Muallif va maqsad';
+  st.querySelector('p').textContent="Ushbu platforma Azizbek Ro'ziboyev tomonidan yaratilgan. Maqsad: o'quvchi va talabalarni sifatli o'quv resurslar bilan ta'minlash.";
+  sub.appendChild(st);
+  main.appendChild(node);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function scrollToTop(){ window.scrollTo({top:0,behavior:'smooth'}); }
+
+/* SEARCH */
+function doSearch(){
+  const q=document.getElementById('globalSearch').value.trim().toLowerCase();
+  if(!q){ alert("Iltimos, qidiruv so'zi kiriting"); return; }
+  const results=[];
+  // search math school & uni
+  for(const sec in DATA.school){
+    const s=DATA.school[sec];
+    for(const t of s.topics){
+      if((t.title && t.title.toLowerCase().includes(q)) || (t.text && t.text.toLowerCase().includes(q))){
+        results.push({kind:'math-school', section:sec, topic:t.title});
+      }
+    }
+  }
+  for(const sec in DATA.university){
+    const s=DATA.university[sec];
+    for(const t of s.topics){
+      if((t.title && t.title.toLowerCase().includes(q)) || (t.text && t.text.toLowerCase().includes(q))){
+        results.push({kind:'math-uni', section:sec, topic:t.title});
+      }
+    }
+  }
+  // search cs
+  for(const sec in DATA.cs.school){
+    const s=DATA.cs.school[sec];
+    for(const t of s.topics){
+      if((t.title && t.title.toLowerCase().includes(q)) || (t.text && t.text.toLowerCase().includes(q))){
+        results.push({kind:'cs-school', section:sec, topic:t.title});
+      }
+    }
+  }
+  for(const sec in DATA.cs.university){
+    const s=DATA.cs.university[sec];
+    for(const t of s.topics){
+      if((t.title && t.title.toLowerCase().includes(q)) || (t.text && t.text.toLowerCase().includes(q))){
+        results.push({kind:'cs-uni', section:sec, topic:t.title});
+      }
+    }
+  }
+  if(results.length===0){ alert("Hech narsa topilmadi. So'zni o'zgartirib ko'ring."); return; }
+  const main=document.getElementById('mainPanel'); main.innerHTML='';
+  const tpl=document.getElementById('topicTemplate'); const node=tpl.content.cloneNode(true);
+  node.querySelector('.topic-title').textContent=`Qidiruv natijalari (${results.length})`;
+  node.querySelector('.topic-desc').textContent=`Natijalar: "${q}"`;
+  const sub=node.querySelector('.subtopics');
+  results.forEach(r=>{
+    const st=document.getElementById('subtopicTemplate').content.cloneNode(true);
+    st.querySelector('h4').textContent = `${r.section} — ${r.topic}`;
+    st.querySelector('p').textContent = `Turi: ${r.kind}`;
+    st.querySelector('.subtopic').onclick = ()=>{
+      // open appropriate section
+      if(r.kind.startsWith('math')){
+        if(r.kind==='math-school'){ enterSite('student'); setTimeout(()=> { openTopic(r.section); highlightSubtopic(r.topic); },300); }
+        else { enterSite('university'); setTimeout(()=> { openTopic(r.section,true); highlightSubtopic(r.topic); },300); }
+      } else {
+        if(r.kind==='cs-school'){ enterSite('student','cs'); setTimeout(()=> { openTopic(r.section,false,'cs',false,'school'); highlightSubtopic(r.topic); },300); }
+        else { enterSite('university','cs'); setTimeout(()=> { openTopic(r.section,false,'cs',false,'university'); highlightSubtopic(r.topic); },300); }
+      }
+    };
+    sub.appendChild(st);
+  });
+  main.appendChild(node);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function highlightSubtopic(title){
+  setTimeout(()=> {
+    const tops = Array.from(document.querySelectorAll('.subtopic'));
+    const found = tops.find(t=> t.querySelector('h4') && t.querySelector('h4').textContent===title);
+    if(found) { found.style.boxShadow='0 0 0 3px rgba(108,193,255,0.08)'; found.scrollIntoView({behavior:'smooth',block:'center'}); }
+  },500);
+}
+
+/* keyboard slash to focus search */
+document.addEventListener('keydown',(e)=>{ if(e.key==='/' && document.activeElement.tagName!=='INPUT'){ e.preventDefault(); document.getElementById('globalSearch').focus(); } });
+
+</script>
+</body>
+</html>
